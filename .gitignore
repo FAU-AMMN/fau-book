@@ -27,5 +27,5 @@
 
 /atelier/logo/**
 /atelier/logo/**/
-!/atelier/logo/**/.gitkeep
+!/atelier/logo/.gitkeep
 
