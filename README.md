@@ -38,14 +38,20 @@ The logo files for the title page are **not** provided in this repo, since we do
 
 ### Example
 
-Let's say you are writing your thesis at the mathematics department. Then you would download [fau-logo-quer](https://www.doc.zuv.fau.de//M/FAU-Logo/05_FAU_NatFak/Print/Quer/CMYK/FAU_NatFak_Q_CMYK_blue.pdf) put in your folder and then set 
+Let's say you are writing your thesis at the mathematics department and want to create the following title page.
+
+<img src="https://user-images.githubusercontent.com/44805883/168069022-0ded3cd5-00cc-486c-917c-3f1d49a0baf9.png" align="right" width="500px"/>
+Then you would download [fau-logo-quer](https://www.doc.zuv.fau.de//M/FAU-Logo/05_FAU_NatFak/Print/Quer/CMYK/FAU_NatFak_Q_CMYK_blue.pdf) put in your folder and specify the path, when you load the class in the preamble:
 
 ```
-\documentclass[...,
-			   WordMark=<path-to-file>,
-			   ExtraLogo=<path-to-file>,
-			   ]{fau-book}
+\documentclass[WordMark=<path-to-file>,
+	       ExtraLogo=<path-to-file>,
+	      ]{fau-book}
 ```
+
+The option ```ExtraLogo```
+
+<br clear="right"/>
 
 
 # :beer: Credit
