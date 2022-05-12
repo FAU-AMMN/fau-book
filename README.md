@@ -40,7 +40,8 @@ The logo files for the title page are **not** provided in this repo, since we do
 
 Let's say you are writing your thesis at the mathematics department and want to create the following title page.
 
-<img src="https://user-images.githubusercontent.com/44805883/168069022-0ded3cd5-00cc-486c-917c-3f1d49a0baf9.png" align="right" width="500px"/>
+<img src="https://user-images.githubusercontent.com/44805883/168069022-0ded3cd5-00cc-486c-917c-3f1d49a0baf9.png" align="right" width="400px"/>
+
 Then you would download [fau-logo-quer](https://www.doc.zuv.fau.de//M/FAU-Logo/05_FAU_NatFak/Print/Quer/CMYK/FAU_NatFak_Q_CMYK_blue.pdf) put in your folder and specify the path, when you load the class in the preamble:
 
 ```
@@ -49,8 +50,7 @@ Then you would download [fau-logo-quer](https://www.doc.zuv.fau.de//M/FAU-Logo/0
 	      ]{fau-book}
 ```
 
-The option ```ExtraLogo```
-
+This puts the FAU logo on the left side. The option ```ExtraLogo``` dfines the logo of the department on the right. The PDF version of this file is unfortunately not available online, write an email to the author if you need it. Alternatively you can use the lower resolution [.jpg version](https://en.www.math.fau.de/wp-content/uploads/sites/3/2018/07/cropped-FAU_DMM_Logo_rgb_10cm-3.jpg).
 <br clear="right"/>
 
 
