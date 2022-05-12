@@ -58,9 +58,12 @@ This puts the FAU logo on the left side. The option ```ExtraLogo``` dfines the l
 
 The ```fau-book``` class and the template was created by [Tim Roith](https://timroith.github.io/).
 
+# :city_sunset: Projects that employ ```fau-book```
+
+* [MathPhysicsC](https://github.com/FAU-AMMN/MathPhysicsC)
+* [Math for Data Scientists](https://github.com/FAU-AMMN/MathDataScience)
+* [Math for Data Scientists 2](https://github.com/FAU-AMMN/MathDataScience2)
+* Master Thesis of [Tim Roith](https://timroith.github.io/)
+
 # License
-License is MIT. We are aware of more specific solutions for LaTeX documents, 
-but not o their benefits. If you have experience with this topic, 
-feel free to suggest a better solution.
-# ToDo
-This section is currently not maintained.
+License is MIT, see the license file.
