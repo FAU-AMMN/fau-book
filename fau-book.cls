@@ -233,7 +233,7 @@ von \textbf{\@author}
 \supervisors
 \end{center}
 %
-\begin{minipage}{0.4\textwidth}
+\begin{minipage}{0.5\textwidth}
 %\vspace*{10mm}
 \includegraphics[width=\textwidth]{\WordMark}
 \end{minipage}
