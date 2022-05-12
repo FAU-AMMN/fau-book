@@ -6,12 +6,6 @@
 ================
 A LaTex template for theses and lecture notes connected to te Friedrich--Alexander-Universität Erlangen--Nürnberg.
 
-[What is ```fau-book```?](What)
-
-[How to use ```fau-book```?](How)
-
-[Credit](How)
-
 <a name="What"></a>
 # :toolbox: What does ```fau-book``` do?
 The provided class and style files set up a convinient environment that 
