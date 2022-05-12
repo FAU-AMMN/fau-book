@@ -1,5 +1,5 @@
-![fau-book](https://user-images.githubusercontent.com/44805883/168063836-31c37534-f796-4722-be0a-93f2f132e482.png)
 
+![fau-book](https://user-images.githubusercontent.com/44805883/168073127-8d5dd402-5734-4f50-9ec7-d66b5ddf2046.png)
 
 
 :green_book: fau-book
