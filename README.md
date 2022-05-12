@@ -1,7 +1,11 @@
+![fau-book](https://user-images.githubusercontent.com/44805883/168045736-49093582-8d4b-4cfb-8021-6d737ca78fe1.png)
+
+
 FAU math thesis
 ================
 # Description
-A LaTex template for math students of FAU.
+A LaTex template for theses and lecture notes connected to te Friedrich--Alexander-Universität Erlangen--Nürnberg.
+
 # Authors
 Tim Roith
 # What does it do?
