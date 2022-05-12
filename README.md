@@ -6,13 +6,21 @@
 ================
 A LaTex template for theses and lecture notes connected to te Friedrich--Alexander-Universität Erlangen--Nürnberg.
 
-# 	:toolbox: What does ```fau-book``` do?
+[What is ```fau-book```?](What)
+
+[How to use ```fau-book```?](How)
+
+[Credit](How)
+
+<a name="What"></a>
+# :toolbox: What does ```fau-book``` do?
 The provided class and style files set up a convinient environment that 
 allows students to create a good looking thesis. Additionally it can be employed to typeset lecture notes.
 
+<a name="How"></a>
 # :gear: How can I use ```fau-book```?
 
-## 	:octocat: Getting the template to your machine and GitHub workflow
+## :octocat: Getting the template to your machine and GitHub workflow
 
 :one: If you are not familiar with GitHub or version control systems in general you 
 can just click the "Clone or download" button which will create a local copy 
@@ -59,6 +67,8 @@ This puts the FAU logo on the left side. The option ```ExtraLogo``` dfines the l
 The ```fau-book``` class and the template was created by [Tim Roith](https://timroith.github.io/).
 
 # :city_sunset: Projects that employ ```fau-book```
+
+Here are some of the projects that employ the ```fau-book``` class. Feel free to suggest additions to this list.
 
 * [MathPhysicsC](https://github.com/FAU-AMMN/MathPhysicsC)
 * [Math for Data Scientists](https://github.com/FAU-AMMN/MathDataScience)
