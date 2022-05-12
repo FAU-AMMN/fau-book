@@ -67,6 +67,7 @@ Here are some of the projects that employ the ```fau-book``` class. Feel free to
 * [MathPhysicsC](https://github.com/FAU-AMMN/MathPhysicsC)
 * [Math for Data Scientists](https://github.com/FAU-AMMN/MathDataScience)
 * [Math for Data Scientists 2](https://github.com/FAU-AMMN/MathDataScience2)
+* [Diskretisierung und numerische Optimierung](https://github.com/FAU-AMMN/DnO)
 * Master Thesis of [Tim Roith](https://timroith.github.io/)
 
 # License
