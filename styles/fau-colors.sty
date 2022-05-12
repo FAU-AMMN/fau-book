@@ -1,0 +1,155 @@
+% ..............................................................................
+% This file defines the color scheme for the different institutions of the FAU, 
+% accoridng to the corporate style guide 2021, see 
+%
+% https://www.intern.fau.de/kommunikation-marketing-und-corporate-identity/corporate-identity/
+%
+%
+% for use with LaTeX.
+%
+% Copyright 2022 by Tim Roith <tim.roith@fau.de>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+%
+% ------------------------------------------------------------------------------
+
+\ProvidesPackage{styles/fau-colors}[Provides colors for the theme. 
+									Author: Tim Carsten Otto Roith]
+
+
+
+\RequirePackage{xcolor}
+
+\newcounter{faucolors@institutecounter}\setcounter{faucolors@institutecounter}{-1}
+\newif\iffaucolors@isFAU\faucolors@isFAUtrue
+\newif\iffaucolors@isPhil\faucolors@isPhilfalse
+\newif\iffaucolors@isRW\faucolors@isRWfalse
+\newif\iffaucolors@isMed\faucolors@isMedfalse
+\newif\iffaucolors@isNat\faucolors@isNatfalse
+\newif\iffaucolors@isNatClassic\faucolors@isNatClassicfalse
+\newif\iffaucolors@isTech\faucolors@isTechfalse
+
+\DeclareOption{FAU}{%
+  \faucolors@isFAUtrue
+  \stepcounter{faucolors@institutecounter}
+}
+\DeclareOption{Phil}{%
+  \faucolors@isPhiltrue
+  \stepcounter{faucolors@institutecounter}
+}
+\DeclareOption{RW}{%
+  \faucolors@isRWtrue
+  \stepcounter{faucolors@institutecounter}
+}
+\DeclareOption{Med}{%
+  \faucolors@isMedtrue
+  \stepcounter{faucolors@institutecounter}
+}
+\DeclareOption{Nat}{%
+  \faucolors@isNattrue
+  \stepcounter{faucolors@institutecounter}
+}
+\DeclareOption{NatClassic}{%
+  \faucolors@isNatClassictrue
+  \stepcounter{faucolors@institutecounter}
+}
+\DeclareOption{Tech}{%
+  \faucolors@isTechtrue
+  \stepcounter{faucolors@institutecounter}
+}
+\ProcessOptions\relax
+
+\ifnum\value{faucolors@institutecounter}>0
+  \PackageError{fau-colors}{Options 'FAU', 'Phil', 'RW', 'Med', 'Nat', and 'Tech' are mutually exclusive. Please only specify one of these options.}{}
+\fi
+
+
+% FAU University colors
+\definecolor{FAUBlue}{RGB}{0,47,108}
+\definecolor{FAUDarkBlue}{RGB}{4,30,66}
+
+% Phil colors
+\definecolor{PhilYellow}{RGB}{255, 184, 28}
+\definecolor{PhilOrange}{RGB}{232, 119, 34}
+
+% RW colors
+\definecolor{RWRed}{RGB}{200, 16, 46}
+\definecolor{RWDarkRed}{RGB}{151,27,47}
+
+% Med colors
+\definecolor{MedBlue}{RGB}{0, 163, 224}
+\definecolor{MedDarkBlue}{RGB}{0, 97, 160}
+
+% Nat colors
+\definecolor{NatGreen}{RGB}{67, 176, 42}
+\definecolor{NatDarkGreen}{RGB}{34, 136, 72}
+
+% Tech colors
+\definecolor{TechMetallic}{RGB}{119, 159, 181}
+\definecolor{TechDarkMetallic}{RGB}{65, 116, 141}
+
+% old FAU Nat Color
+\definecolor{NatGreenClassic}{RGB}{0,155,119}
+
+\iffaucolors@isFAU
+  \colorlet{BaseColor}{FAUBlue}
+  \colorlet{BaseDarkColor}{FAUDarkBlue}
+\fi
+
+\iffaucolors@isPhil
+  \colorlet{BaseColor}{PhilYellow}
+  \colorlet{BaseDarkColor}{PhilOrange}
+\fi
+
+\iffaucolors@isRW
+  \colorlet{BaseColor}{RWRed}
+  \colorlet{BaseDarkColor}{RWDarkRed}
+\fi
+
+\iffaucolors@isMed
+  \colorlet{BaseColor}{MedBlue}
+  \colorlet{BaseDarkColor}{MedDarkBlue}
+\fi
+
+\iffaucolors@isNat
+  \colorlet{BaseColor}{NatGreen}
+  \colorlet{BaseDarkColor}{NatDarkGreen}
+\fi
+
+\iffaucolors@isNatClassic
+  \colorlet{BaseColor}{NatGreenClassic}
+  \colorlet{BaseDarkColor}{NatGreenClassic}
+\fi
+
+\iffaucolors@isTech
+  \colorlet{BaseColor}{TechMetallic}
+  \colorlet{BaseDarkColor}{TechDarkMetallic}
+\fi
+
+%
+% ..............................................................................
+% Define different shades for BaseColor and BaseDarkColor
+% ------------------------------------------------------------------------------
+%
+\colorlet{BaseColorA}{BaseColor!62.5}
+\colorlet{BaseColorB}{BaseColor!37.5}
+\colorlet{BaseColorC}{BaseColor!25.0}
+\colorlet{BaseColorD}{BaseColor!12.5}
+
+\colorlet{BaseColorConj}{BaseColor>wheel,1,2}
+
+\colorlet{BaseDarkColorA}{BaseDarkColor!62.5}
+\colorlet{BaseDarkColorB}{BaseDarkColor!37.5}
+\colorlet{BaseDarkColorC}{BaseDarkColor!25.0}
+\colorlet{BaseDarkColorD}{BaseDarkColor!12.5}
+
+%
+% ..............................................................................
+% Set colors for hypersetup
+% ------------------------------------------------------------------------------
+%
+\hypersetup{
+		urlcolor=BaseColor,
+		citecolor=BaseColorConj,
+		linkcolor=BaseColor}

@@ -1,0 +1,72 @@
+% ========================================================================================
+\chapter{Example Section for \texttt{\classname}}\label{ch:ex}
+This chapter demonstrates the appearance of the thesis. 
+% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Demonstration}
+This is a Section.
+% ........................................................................................
+\subsection{Subsection A}
+This is a subsection. \kant[1]
+\paragraph{Paragraph A}
+I am a paragraph. 
+\paragraph{Paragraph B}
+So am I.
+% ........................................................................................
+\subsection{Subsection B}
+This is also a subsection.
+% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Citation}
+This sections demonstrates how citations looks like.
+This is a book \cite{Evans15}. This is an article \cite{Ben02}. This is a 
+website \cite{FAUreg}.
+% ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Definitions, Theorems, Remarks}
+This sections demonstrates how the different theorem environments look like.
+%-----------------------------------------------------------------------------------------
+\begin{lemma}{Compactness in metric spaces}{compMet}
+Let $X$ be a metric space and $A\subset X$, then the following statements are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item $A$ is relatively compact;
+\item $A$ is sequentially compact;
+\item $A$ is totally bounded and $\overline A$ is complete.
+\end{enumerate}	
+\end{lemma}
+This is an equation
+\begin{equation}\label{eq:Gauss}
+\sum_{i=1}^n=\frac{n~(n+1)}{2}.
+\end{equation}
+From \ref{eq:Gauss} we see can deduce something very useful. 
+We can also use \cref{eq:Gauss} or \labelcref{eq:Gauss} to refer to an equation.
+%-----------------------------------------------------------------------------------------
+\begin{remark}{}{}
+If $X$ is a complete metric space, we know that every closed subset $A\subset X$ is 
+complete and thus the last statement in the above lemma reduces to total boundedness, 
+see \cite[Lem. I.6.7]{Dunf60}.
+\end{remark}
+%-----------------------------------------------------------------------------------------
+\begin{proof}
+See, for example, \cite[Lem. I.6.15]{Dunf60}.
+\end{proof}
+% ----------------------------------------------------------------------------------------
+The main result in the context of the weak$^\ast$ topology is stated below.
+\index{topology!weak}
+\index{topology!weak*}
+\index{topology!strong}
+% ----------------------------------------------------------------------------------------
+\begin{definition}{}{}
+\begin{enumerate}[label=(\roman*)]
+\item Given a set $X$ and a family $\mathcal{F}$ of functions $f_i:X\rightarrow \mathcal{Y}_i$ 
+associated with topological spaces $\mathcal{Y}_i$ we denote by $\sigma(X,\mathcal{F})$ 
+the initial topology, i.e., the coarsest topology on $X$ such that each $F_i$ is continuous.
+\item Let $X$ be a Banach space, then we denote by $\sigma(X,X^{\ast})$ the 
+\emph{weak topology} on $X$, while the usual one induced by the norm is referred to as 
+\emph{strong topology}.
+\item Considering the family $\mathcal{F}:=\{X^{\ast}\ni\xi\mapsto\xi(x)\in\R: x\in E\}$ 
+we call $\sigma(X^{\ast}, \mathcal{F}) =:\sigma(X^{\ast},X)$ the weak$^\ast$ topology.
+\end{enumerate}
+\end{definition}
+% ----------------------------------------------------------------------------------------
+% ========================================================================================
+\chapter{Typeface}
+This chapter demonstrates the typeface.
+\kant

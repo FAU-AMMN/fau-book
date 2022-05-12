@@ -1,0 +1,40 @@
+\ProvidesPackage{styles/fau-symbols}[2018/07/12 Defines useful commands. 
+									 Author: \cfileauthor]
+\ProcessOptions\relax
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\RequirePackage{amsmath,amsthm,amssymb} 
+\RequirePackage{dsfont}
+\RequirePackage{nomencl}
+\RequirePackage{makeidx}
+\makeindex
+\makenomenclature
+\setlength{\nomlabelwidth}{1.5cm}
+% ########################################################################################
+% Specific values
+% ----------------------------------------------------------------------------------------
+\newcommand*{\dims}{d}
+% ########################################################################################
+% Operators
+% ----------------------------------------------------------------------------------------
+\newcommand*{\laplace}{\ensuremath{\Delta}}
+\nomenclature{\laplace}{The Laplace operator.}
+\newcommand*{\supp}{\mathrm{supp}}
+\newcommand*{\abs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand*{\norm}[1]{\ensuremath{\|#1\|}}
+\DeclareMathOperator*{\esssup}{ess\,sup}
+% ########################################################################################
+% Number sets
+% ----------------------------------------------------------------------------------------
+%\newcommand*{\C}{\ensuremath{\mathds{C}}}
+%\nomenclature{\C}{The set of complex numbers.}
+\newcommand*{\N}{\ensuremath{\mathds{N}}}
+\nomenclature{\N}{The set of integers.}
+\newcommand*{\R}{\ensuremath{\mathds{R}}}
+\nomenclature{\R}{The set of real numbers.}
+\newcommand*{\Rd}{\R^{\dims}}
+
+
+
+
+
+

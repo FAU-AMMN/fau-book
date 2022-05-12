@@ -1,0 +1,38 @@
+\documentclass[fontsize=11pt, % size of the font
+			   paper=a4,
+			   chapterprefix=true,
+			   WordMark=atelier/logo/FAU-NatFak.pdf,
+			   ExtraLogo=atelier/logo/DepMathLogo.pdf,
+			   % oneside, % other option: oneside
+			   % chapterprefix=false, % specifies if the word chapter is printed for chapter headings
+			   % BCOR=0mm, % offset for binding
+			   setPDF, % sets twosided=semi, BCOR=0, DIV=classic if not specified
+			   % showframe, % show the page layout
+			   bibstyle=styleB,
+			   ]{fau-book}
+% ########################################################################################
+\input{frontmatter/00_preamble.tex}
+\input{frontmatter/01_dedication_abstract.tex}
+%
+\begin{document}
+%-------------------------------------------------
+\frontmatter
+%-------------------------------------------------
+\maketitle
+\printdedication
+\printacknowledgement
+\tableofcontents
+\listoffigures
+\printnomenclature
+%-------------------------------------------------
+\mainmatter
+%-------------------------------------------------
+\input{mainmatter/01_introduction.tex}
+\input{mainmatter/02_example.tex}
+%-------------------------------------------------
+\backmatter
+\input{backmatter/thesis-printbib.tex}
+\printindex
+\declarationGer
+%-------------------------------------------------
+\end{document}

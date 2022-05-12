@@ -1,0 +1,287 @@
+\ProvidesPackage{styles/fau-appearence}[\filedate Package to be used in combination with
+										the]
+
+% ########################################################################################
+% Options and bools
+% ----------------------------------------------------------------------------------------
+%
+% ----------------------------------------------------------------------------------------
+% Theorem styles
+\newif\ifFAU@thmplain\FAU@thmplaintrue
+\def\thmstyle{thmstyle_plain}
+\def\thmsstyle{\tstyle@default}
+\DeclareOptionX{thmboxing}{
+	\def\thmstyle{#1}
+	\def\thmsstyle{\csname tstyle@#1\endcsname}
+}
+%
+\def\boxingstyle{\bstyle@default}
+\DeclareOptionX{boxingstyle}{\def\boxingstyle{\csname bstyle@#1\endcsname}}
+% ----------------------------------------------------------------------------------------
+% chapter headers
+\def\chapterheaderstyle{\cheadstyle@default}
+\DeclareOptionX{chapterheader}{\def\chapterheaderstyle{\csname cheadstyle@#1\endcsname}}
+% ----------------------------------------------------------------------------------------
+% header and footer
+\def\footerheaderstyle{\fheadstyle@default}
+\DeclareOptionX{footerheader}{\def\footerheaderstyle{\csname fheadstyle@#1\endcsname}}
+%
+\ExecuteOptionsX{thmboxing=thmstyle_plain}
+%
+\DeclareOptionX{noabbrev}{\PassOptionsToPackage{noabbrev}{cleveref}}
+%
+\ProcessOptionsX
+% ########################################################################################
+% Chapter opening
+% ----------------------------------------------------------------------------------------
+% the default chapter header
+% ----------------------------------------------------------------------------------------
+\def\cheadstyle@default{} % currently empty
+% ----------------------------------------------------------------------------------------
+% styleA: Consistent with styleA design scheme
+% ----------------------------------------------------------------------------------------
+\def\cheadstyle@styleA{
+%\RedeclareSectionCommand[beforeskip=1sp, font=\huge\mdseries]{chapter}
+%-------------------------------------------------
+\setkomafont{chapter}{\Huge}
+\setkomafont{chapterprefix}{\Huge}
+\addtokomafont{disposition}{\rmfamily}
+\addtokomafont{title}{\rmfamily}
+\addtokomafont{author}{\rmfamily}
+%-------------------------------------------------
+\renewcommand*\chapterformat{%
+	\IfChapterUsesPrefixLine{
+		\textcolor{BaseColorA}{\chapappifchapterprefix{\ }}
+	    \textcolor{BaseColorA}{\thechapter}}{%
+	    % else
+	    \textcolor{BaseColor}{\Huge\thechapter}}}%
+%
+\renewcommand*\chapterlinesformat[3]{%
+	\raggedright\Huge##3%
+	\makebox[0pt][l]{##2}}
+%
+\renewcommand*{\chapterlineswithprefixformat}[3]{%
+	\textcolor{BaseColorA}{\rule{\textwidth}{.4pt}}
+	\raggedchapter ##2 % chapter
+	\raggedchapter ##3 % number
+	\textcolor{BaseColorA}{\rule{\textwidth}{.4pt}}}%
+}
+% ----------------------------------------------------------------------------------------
+% styleB: Inspired by
+% https://tex.stackexchange.com/questions/330243/chapter-heading-formatting-with-scrreprt
+% ----------------------------------------------------------------------------------------
+\def\cheadstyle@styleB{
+	\newsavebox{\faumath@chapter}
+	\newcommand\faumath@chapter@marker[1][0cm]{%
+	  \sbox\faumath@chapter{%
+	    \resizebox{!}{##1}{\setlength{\fboxsep}{0pt}%
+	        \colorbox{white}{\color{black}\thechapter}}}%
+	  \raisebox{\depth}{\usebox{\faumath@chapter}}%
+	}
+	\renewcommand*{\chapterformat}{\faumath@chapter@marker[1.4cm]}
+	
+	\renewcommand\chapterlinesformat[3]{%
+	  \ifstr{##1}{chapter}
+	  {%
+	    \makebox[\textwidth][l]{%
+	      \parbox[b]{\textwidth-1.6em}{\raggedchapter ##3}%
+	      \makebox[0pt][l]{##2}%
+	    }\\*[-.5\baselineskip]
+	    \rule{\textwidth}{.4pt}%
+	    \par%
+	  }
+	  {\@hangfrom{##2}{##3}}%
+	}
+}
+\chapterheaderstyle % execute option
+% ########################################################################################
+%
+%
+%
+%
+%
+%
+% ########################################################################################
+% Footer and header styles. It is best pratice to use the scrlayer-scrpage package here!
+% ----------------------------------------------------------------------------------------
+\RequirePackage{scrlayer-scrpage}
+% ----------------------------------------------------------------------------------------
+% The dafault footer header options
+% ----------------------------------------------------------------------------------------
+\def\fheadstyle@default{} % currently empty
+% ----------------------------------------------------------------------------------------
+% styleA:
+% ----------------------------------------------------------------------------------------
+\def\fheadstyle@styleA{
+	
+}
+% ----------------------------------------------------------------------------------------
+% styleB: Inspired by 
+%https://tex.stackexchange.com/questions/261148/how-to-produce-a-headsepline-from-the-border-of-the-page-to-the-end-of-the-chapt
+% ----------------------------------------------------------------------------------------
+\def\fheadstyle@styleB{
+	\ohead{%
+  		\Ifthispageodd{\makebox[0pt][l]{\rule[-5pt]{\paperwidth}{.4pt}}}{}%
+  		\headmark%
+  		\Ifthispageodd{}{\makebox[0pt][r]{\rule[-5pt]{\paperwidth}{.4pt}}}%
+	}
+}
+% ----------------------------------------------------------------------------------------
+% styleC:
+% ----------------------------------------------------------------------------------------
+\def\fheadstyle@styleC{
+
+}
+\footerheaderstyle % execute
+% ########################################################################################
+%
+%
+%
+%
+%
+% ########################################################################################
+% Theorem and box appearence
+% Here we use the tcolorbox package to style theorems and boxes and add the 
+% cleveref packag for cross referencing
+% ----------------------------------------------------------------------------------------
+\usepackage[most]{tcolorbox}
+\usepackage[nameinlink, capitalise, german]{cleveref}
+% ----------------------------------------------------------------------------------------	
+% default definition and theorem style
+% ----------------------------------------------------------------------------------------	
+\tcbset{
+	thmstyle_plain/.style={fonttitle=\bfseries\upshape, 
+	%fontupper=\slshape,
+	breakable,
+	before skip=15pt, % space before env
+	colback=white, boxrule=0pt, colframe=white, % no visible frame, no visible background
+	coltitle=black, % Titlecolor
+	separator sign none, % Theorem 1.2 >separator sign< (Euler).
+	description delimiters parenthesis, % Theorem 1.2 >(<Euler>)<.
+	terminator sign={.}, % Theorem 1.2 (Euler)>.<
+	attach title to upper={~  }, % Theorem 1.2 (Euler). Text will start in this line.
+	size = minimal, % spacing of the box around the theorem
+	boxsep=0mm
+    },
+    label separator={}
+}
+% ----------------------------------------------------------------------------------------	
+% This style is inspired by an answer given on stackexchange: 
+%https://tex.stackexchange.com/questions/369430/theorems-and-definitions-boxes-numbering-should-be-chapter-wise
+% ----------------------------------------------------------------------------------------	
+\tcbset{
+	styleA/.style={
+    reset,
+    enhanced,
+    breakable,
+    sharp corners,
+    attach boxed title to top left={
+      yshift=-3mm,
+      yshifttext=-1mm,
+      xshift=10mm
+    },
+    coltitle=white,
+    top=1.5ex,
+    colback=white,
+    colframe=BaseColor,
+    fonttitle=\bfseries,
+    boxed title style={
+    sharp corners,
+    size=small,
+    colback=BaseColor,
+    colframe=BaseColorA,
+  },
+  terminator sign={.},
+  label separator={}
+}}
+% ----------------------------------------------------------------------------------------
+% Kinda FAU corporate
+% ----------------------------------------------------------------------------------------
+\tcbset{styleB/.style={
+    boxrule=0pt,
+    before skip=15pt,
+    enhanced,
+    sharp corners,
+    attach boxed title to top left={
+      	xshift=0mm,
+      	yshift=1mm
+    },
+    %minipage boxed title = \linewidth,
+    coltitle=white,
+    top=1.5ex,
+    colback=white,
+    colframe=white,
+    fonttitle=\bfseries,
+    boxed title style={
+    	enhanced,
+    	left=0mm,
+    	boxrule=0pt,
+    	sharp corners,
+    	colback=BaseColor,
+    	colframe=white,
+    	borderline west={2mm}{-2.5mm}{BaseColor}
+  },
+  size=minimal,
+  borderline west ={2mm}{-2.5mm}{BaseColor},
+  terminator sign={.}
+}}
+% ----------------------------------------------------------------------------------------
+% If the theroem custom flag is not set we provide the full theorem environement
+% ----------------------------------------------------------------------------------------	
+\def\tstyle@default{}
+% ----------------------------------------------------------------------------------------	
+\def\tstyle@styleA{
+\FAU@thmplainfalse
+\newtcbtheorem[number within=chapter]{theorem}{THEOREM}{\thmstyle, label type=theorem}{}
+\newtcbtheorem[use counter from=theorem]{definition}{DEFINITION}{\thmstyle, label type=definition}{}
+\newtcbtheorem[use counter from=theorem]{corollary}{KOROLLAR}{\thmstyle, label type=corollary}{}
+\newtcbtheorem[use counter from=theorem]{lemma}{LEMMA}{\thmstyle, label type=lemma}{}
+\newtcbtheorem[use counter from=theorem]{remark}{BEMERKUNG}{thmstyle_plain, 
+														 after upper={\hfill$\triangle$},
+														 label type=remark}{}
+\newtcbtheorem[use counter from=theorem]{example}{BEISPIEL}{\thmstyle, 
+	fontupper=\upshape, label type=example}{}		
+}
+% ----------------------------------------------------------------------------------------	
+\def\tstyle@styleB{\tstyle@styleA}
+% ----------------------------------------------------------------------------------------	
+\def\tstyle@styleC{\tstyle@styleA}
+% ----------------------------------------------------------------------------------------	
+\thmsstyle % Excecute
+% ----------------------------------------------------------------------------------------
+% Other boxes
+% ----------------------------------------------------------------------------------------	
+\newtcolorbox{emphBox}{}
+\newtcolorbox{memo}{}
+\def\bstyle@default{}
+% ----------------------------------------------------------------------------------------	
+% All the boxings associated with styleA
+% ----------------------------------------------------------------------------------------	
+\def\bstyle@styleA{
+% Emphasize a text by lying some color underneath it
+\renewtcolorbox{emphBox}{
+	enhanced,
+	colback=BaseColorB,
+	colframe=white, boxrule=0pt,
+	sharp corners,
+	left=0.0pt,
+	right=0.0pt,
+	boxsep=0mm
+    % drop shadow southeast
+}
+% For important memos
+\ifFAU@thmplain
+	\renewtcolorbox[auto counter]{memo}[2][]{
+		styleA, title= MEMO ##2, ##1}
+\else
+	\renewtcolorbox[auto counter,use counter from=theorem]{memo}[2][]{
+		styleA, title= MEMO \thetcbcounter: ##2, ##1}
+\fi
+}
+\boxingstyle % execute boxing
+% ########################################################################################
+% Enumerating styles
+% ----------------------------------------------------------------------------------------	
+\usepackage{enumitem}
+\SetEnumitemKey{roman}
+{label=\upshape(\roman*)}

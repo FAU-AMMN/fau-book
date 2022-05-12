@@ -1,0 +1,49 @@
+% ########################################################################################
+% Font encoding and font specification
+% ----------------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% ########################################################################################
+% The following specifies the titlepage and can not be deleted
+% ----------------------------------------------------------------------------------------
+\title{Title of your thesis}
+\author{Your name}
+\thesistype{Bachelor-Arbeit}
+\degree{Bachelor of Science (B.Sc.)}
+\degprog{Mathematik}% specify the degree program
+\Referee{first=Prof. A, second=Dr. B}% Referees
+\Advisor{first=M.Sc. C}
+%\renewcommand{\supervisors}{Hello :)} % use this to specify the supervisor area yourself
+%\subdate{Today} % Use this if you want to specify the date on the titlepage
+% ########################################################################################
+\keywords{topicA, topicB, topicC} %keywords of your thesis
+\setpdfinfo % For additional information in the pdf file
+% ########################################################################################
+% Bibliography
+% ----------------------------------------------------------------------------------------
+\addbibresource{backmatter/thesis-bibliography.bib}
+% ########################################################################################
+% Load the fau style packages with customization
+% ----------------------------------------------------------------------------------------
+% Color themes
+\usepackage[NatClassic]{styles/fau-colors}
+
+% Appearence of boxes and page
+\usepackage[thmboxing=styleA,
+			boxingstyle=styleA,
+			chapterheader=styleA, 
+			footerheader=styleA,
+			%noabbrev % no abbreviations in cleveref
+			]{styles/fau-appearence}
+% Command spec for symbols
+\usepackage{styles/fau-symbols}
+% ########################################################################################
+% ########################################################################################
+% ########################################################################################
+% Custom commands and additional packages
+% Put additional command definition below.
+% Load additional packages below 
+% ----------------------------------------------------------------------------------------
+%
+\usepackage{kantlipsum}
+\usepackage[totoc]{idxlayout}
