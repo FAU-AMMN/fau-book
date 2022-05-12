@@ -25,6 +25,7 @@
 *.els
 *.ilg
 
+/atelier/logo/**
 /atelier/logo/**/
 !/atelier/logo/**/.gitkeep
 
