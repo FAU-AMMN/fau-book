@@ -4,7 +4,7 @@
 
 :green_book: fau-book
 ================
-A LaTex template for theses and lecture notes connected to te Friedrich-Alexander-Universität Erlangen-Nürnberg.
+A LaTeX template for theses and lecture notes at the Friedrich-Alexander-Universität Erlangen-Nürnberg.
 
 <a name="What"></a>
 # :toolbox: What does ```fau-book``` do?
