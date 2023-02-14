@@ -52,7 +52,7 @@ Then you would download [fau-logo-quer](https://www.doc.zuv.fau.de//M/FAU-Logo/0
 	      ]{fau-book}
 ```
 
-This puts the FAU logo on the left side. The option ```ExtraLogo``` dfines the logo of the department on the right. The PDF version of this file is unfortunately not available online, write an email to the author if you need it. Alternatively you can use the lower resolution [.jpg version](https://en.www.math.fau.de/wp-content/uploads/sites/3/2018/07/cropped-FAU_DMM_Logo_rgb_10cm-3.jpg).
+This puts the FAU logo on the left side. The option ```ExtraLogo``` defines the logo of the department on the right. The PDF version of this file is unfortunately not available online, write an email to the author if you need it. Alternatively you can use the lower resolution [.jpg version](https://en.www.math.fau.de/wp-content/uploads/sites/3/2018/07/cropped-FAU_DMM_Logo_rgb_10cm-3.jpg).
 <br clear="right"/>
 
 
